@@ -1,0 +1,1 @@
+A scalable, production-ready YouTube-inspired backend built with Node.js, Express, and MongoDB. It supports authentication, video management, playlists, subscriptions, likes, tweets, and a full comment system.

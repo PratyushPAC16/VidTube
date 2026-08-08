@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   LIGHT MODE (default)
+   ───────────────────────────────────────────── */
+:root {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Light mode scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ─────────────────────────────────────────────
+   DARK MODE OVERRIDES
+   
+   These selectors override Tailwind utility 
+   classes when the .dark class is on the root.
+   Because Tailwind v4 utilities are in @layer,
+   these unlayered rules win by specificity.
+   ───────────────────────────────────────────── */
+
+/* === Root & Body === */
+.dark {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+/* === Backgrounds === */
+.dark .bg-white { background-color: #0f172a; }
+.dark .bg-slate-50 { background-color: #1e293b; }
+.dark .bg-slate-100 { background-color: #334155; }
+.dark .bg-slate-200 { background-color: #475569; }
+.dark .hover\:bg-slate-50:hover { background-color: #1e293b; }
+.dark .hover\:bg-slate-100:hover { background-color: #334155; }
+.dark .hover\:bg-slate-200:hover { background-color: #475569; }
+.dark .hover\:bg-white:hover { background-color: #1e293b; }
+
+/* Blue accent backgrounds (keep them but adapt soft variants) */
+.dark .bg-blue-50 { background-color: rgba(59, 130, 246, 0.1); }
+.dark .bg-blue-100 { background-color: rgba(59, 130, 246, 0.15); }
+.dark .hover\:bg-blue-50:hover { background-color: rgba(59, 130, 246, 0.15); }
+.dark .hover\:bg-blue-100:hover { background-color: rgba(59, 130, 246, 0.2); }
+
+/* Combined blue backgrounds */
+.dark .bg-blue-50\/50 { background-color: rgba(59, 130, 246, 0.05); }
+.dark .bg-slate-50\/50 { background-color: rgba(30, 41, 59, 0.5); }
+.dark .bg-slate-50\/20 { background-color: rgba(30, 41, 59, 0.2); }
+
+/* Hover states for cards */
+.dark .hover\:bg-slate-50\/50:hover { background-color: rgba(30, 41, 59, 0.5); }
+
+/* Red hover */
+.dark .hover\:bg-red-50:hover { background-color: rgba(239, 68, 68, 0.1); }
+
+/* === Text Colors === */
+.dark .text-slate-900 { color: #f1f5f9; }
+.dark .text-slate-800 { color: #e2e8f0; }
+.dark .text-slate-700 { color: #cbd5e1; }
+.dark .text-slate-600 { color: #94a3b8; }
+.dark .text-slate-500 { color: #64748b; }
+.dark .text-slate-400 { color: #64748b; }
+.dark .text-slate-300 { color: #475569; }
+.dark .text-slate-200 { color: #475569; }
+.dark .text-slate-100 { color: #334155; }
+
+/* Hover text */
+.dark .hover\:text-slate-900:hover { color: #f1f5f9; }
+.dark .hover\:text-blue-600:hover { color: #60a5fa; }
+
+/* Group-hover text */
+.dark .group-hover\:text-blue-600:hover,
+.dark .group:hover .group-hover\:text-blue-600 { color: #60a5fa; }
+
+/* Blue text stays but gets slightly brighter */
+.dark .text-blue-600 { color: #60a5fa; }
+.dark .text-blue-700 { color: #60a5fa; }
+
+/* === Borders === */
+.dark .border-slate-200 { border-color: #334155; }
+.dark .border-slate-100 { border-color: #1e293b; }
+.dark .border-slate-50 { border-color: #1e293b; }
+.dark .border-blue-100 { border-color: rgba(59, 130, 246, 0.2); }
+.dark .border-blue-600\/30 { border-color: rgba(96, 165, 250, 0.3); }
+
+/* Dashed borders */
+.dark .border-dashed { border-color: #334155; }
+
+/* === Shadows === */
+.dark .shadow-sm { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+.dark .shadow-lg { box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); }
+.dark .shadow-xl { box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3); }
+.dark .shadow-2xl { box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4); }
+.dark .shadow-blue-200 { --tw-shadow-color: rgba(59, 130, 246, 0.1); }
+.dark .shadow-blue-600\/20 { --tw-shadow-color: rgba(59, 130, 246, 0.1); }
+.dark .shadow-blue-900\/5 { --tw-shadow-color: rgba(0, 0, 0, 0.2); }
+
+/* Hover shadows */
+.dark .hover\:shadow-lg:hover { box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); }
+.dark .hover\:shadow-2xl:hover { box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4); }
+.dark .hover\:shadow-sm:hover { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+
+/* === Form Inputs === */
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border-color: #334155;
+}
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #64748b;
+}
+.dark input:focus,
+.dark textarea:focus {
+  border-color: #3b82f6;
+}
+
+/* File inputs */
+.dark .file\:bg-blue-50::file-selector-button {
+  background-color: rgba(59, 130, 246, 0.1);
+}
+.dark .hover\:file\:bg-blue-100:hover::file-selector-button {
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+/* === Focus Rings === */
+.dark .focus\:ring-blue-100:focus { --tw-ring-color: rgba(59, 130, 246, 0.2); }
+.dark .focus\:border-blue-400:focus { border-color: #60a5fa; }
+.dark .focus\:border-blue-300:focus { border-color: #60a5fa; }
+.dark .focus-within\:ring-blue-100:focus-within { --tw-ring-color: rgba(59, 130, 246, 0.2); }
+.dark .focus-within\:border-blue-300:focus-within { border-color: #60a5fa; }
+
+/* === Rings === */
+.dark .ring-blue-600\/10 { --tw-ring-color: rgba(59, 130, 246, 0.15); }
+
+/* === Gradients === */
+.dark .from-blue-50 { --tw-gradient-from: rgba(59, 130, 246, 0.05); }
+.dark .from-blue-50\/50 { --tw-gradient-from: rgba(59, 130, 246, 0.03); }
+.dark .to-white { --tw-gradient-to: #0f172a; }
+.dark .via-slate-50 { --tw-gradient-via: #1e293b; }
+.dark .to-slate-50 { --tw-gradient-to: #1e293b; }
+
+/* === Backdrop === */
+.dark .bg-black\/70 { background-color: rgba(0, 0, 0, 0.85); }
+.dark .bg-white\/40 { background-color: rgba(15, 23, 42, 0.6); }
+.dark .bg-white\/80 { background-color: rgba(30, 41, 59, 0.9); }
+.dark .bg-slate-900\/60 { background-color: rgba(0, 0, 0, 0.7); }
+
+/* === Scrollbar (dark) === */
+.dark ::-webkit-scrollbar-track { background: #1e293b; }
+.dark ::-webkit-scrollbar-thumb { background: #475569; }
+.dark ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+/* === Video Player specific === */
+.dark .bg-black { background-color: #000000; }
+
+/* === Skeleton/Placeholder elements === */
+.dark .bg-slate-200 { background-color: #334155; }
+
+/* === Active states === */
+.dark .bg-blue-100\/50 { background-color: rgba(59, 130, 246, 0.15); }
+
+/* === Transition for smooth dark mode toggle === */
+*, *::before, *::after {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-out;
+}
+
+/* Exclude transitions on animations and transforms */
+.animate-spin,
+[class*="transition-transform"],
+[class*="transition-all"] {
+  transition-property: all;
+}
